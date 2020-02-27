@@ -44,4 +44,21 @@ class HomeController extends Controller
 
         return view('layouts.index')->with($params);
     }
+
+    public function product($id)
+    {
+        $product = Product::whereId($id)->first();
+
+        $params = [
+            'title' => 'Product Details',
+            'sub_title' => 'Product ID: ' . $product->id,
+            'id' => $product->id,
+            'name' => $product->name,
+            'description' => $product->description,
+            'price' => $product->price,
+            'image' => $product->getImage(),
+        ];
+
+        return view('layouts.product')->with($params);
+    }
 }

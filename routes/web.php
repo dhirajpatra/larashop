@@ -28,3 +28,4 @@ Route::get('/cart-checkout', 'CartController@cart')->name('cart.checkout');
 Route::post('/cart-clear', 'CartController@clear')->name('cart.clear');
 Route::get('/brands/{url}', 'HomeController@brands')->name('brands');
 Route::get('/categories/{url}', 'HomeController@categories')->name('categories');
+Route::get('/products/{id}', 'HomeController@product')->name('product');
